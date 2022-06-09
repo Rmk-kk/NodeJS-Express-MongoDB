@@ -1,19 +1,19 @@
 # NodeJS-Express-MongoDB
 Portfolio project. Simple log in/ registration window with connection to Mongo. 
 
-##Quick setup
+## Quick setup
 
-###In terminal:
+### In terminal:
 
 ```npm i```
 
-####Will install node packages and dependencies.
+#### Will install node packages and dependencies.
 
 ```npm run dev```
 
-####Will start server with nodemon on localhost port 3000
+#### Will start server with nodemon on localhost port 3000
 
-##Quick description
+## Quick description
 
 This simple project is made of 3 parts, Node.js, MongoDB and HandleBars + CSS. 
 I used `bcrypt.js` for hashing password, `csurf` CSRF tokens for input data protection. 
