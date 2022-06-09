@@ -9,6 +9,10 @@ Portfolio project. Simple log in/ registration window with connection to Mongo.
 
 #### Will install node packages and dependencies.
 
+```node .\index.js```
+
+#### Will normally start server without nodemon on localhost 3000
+
 ```npm run dev```
 
 #### Will start server with nodemon on localhost port 3000
