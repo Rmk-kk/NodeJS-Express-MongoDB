@@ -1,0 +1,25 @@
+<div class="log_in--window">
+    <h1>New User</h1>
+    <form  action="registration/reg" method="post" class="log_in--form">
+        <div class="input__field">
+            <input type="text" id="input--username--new" name="username" autocomplete="off" required>
+            <span></span>
+            <label for="input--username--new"><i class="fa fa-light fa-user"></i>Username</label>
+        </div>
+
+        <div class="input__field">
+            <input type="password" id="input--password--new" name="password" required>
+            <span></span>
+            <label for="input--password--new"><i class="fa fa-solid fa-lock"></i>Password</label>
+        </div>
+        {{#if regError}}
+            <p class="error">{{regError}}</p>
+        {{/if}}
+        <input type="hidden" name="_csrf" value="{{csrf}}">
+        <button type="submit" class="log__in--button" id="new__user--button">JOIN</button>
+        <div class="sign_up-link">
+            <span>Already a member?</span>
+            <a href="/" class="sign_up-link--button">Log in</a>
+        </div>
+    </form>
+</div>
