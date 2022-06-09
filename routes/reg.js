@@ -1,8 +1,7 @@
 const { Router } = require('express');
 const router = Router();
-const User = require('../views/models/user');
+const User = require('../models/user');
 const bcrypt = require('bcryptjs');
-
 
 //GET request to registration page
 router.get('/', (req, res) => {
@@ -14,10 +13,8 @@ router.get('/', (req, res) => {
 
 //User registration
 router.post('/reg', async (req, res) => {
-    console.log(req.body);
     try {
         const { username, password } = req.body;
-        console.log({username, password});
         const userTryingToRegister = await User.findOne({ username });
         //if user exist => stay on reg page + error, else => to login page
         if(userTryingToRegister){
@@ -30,7 +27,7 @@ router.post('/reg', async (req, res) => {
             res.redirect('/#succesfull')
         }
     } catch (error) {
-        console.log(error);
+        console.error(error);
     }
 })
 

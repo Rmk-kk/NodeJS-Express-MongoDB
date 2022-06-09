@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const User  = require('../views/models/user');
+const User  = require('../models/user');
 const bcrypt = require('bcryptjs');
 const router = Router();
 
@@ -49,7 +49,7 @@ router.post('/login', async (req, res) => {
             res.redirect('/#userdoesntexist');
         }
     } catch (error) {
-        console.log(error);
+        console.error(error);
     }
 })
 
