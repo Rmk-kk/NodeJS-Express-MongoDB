@@ -8,6 +8,7 @@ router.get('/', (req, res) => {
     res.render('index', {
         title: 'NodeJS Project',
         loginError: req.flash('loginError'),
+        success: req.flash('success'),
     })
 })
 

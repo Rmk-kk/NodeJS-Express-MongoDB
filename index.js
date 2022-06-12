@@ -1,8 +1,5 @@
 const express = require('express'); //express js
 const mongoose = require("mongoose"); //mongo DB
-const homeRoute = require('./routes/auth'); // log in page routes
-const regRoute = require('./routes/reg'); // registration page routes
-const userRoute = require('./routes/userPage'); //secret page routes
 const path = require('path'); //path module
 const handlebars = require('express-handlebars'); // handlebars
 const keys = require('./keys/keys');//Importing keys ( URI etc.)
@@ -12,7 +9,12 @@ const middleWear = require('./middleware/variables'); // auth session
 const csurf = require('csurf'); //Middleware for app, POST requests protection
 const flash = require('connect-flash');//Middleware for errors
 const MongoStorage = require('connect-mongodb-session')(session); // mongoDV session storage
-
+//Routes
+const homeRoute = require('./routes/auth'); // log in page routes
+const regRoute = require('./routes/reg'); // registration page routes
+const userRoute = require('./routes/userPage'); //secret page routes
+const passRequestRoute = require('./routes/reset');//Reset password page routes
+const setNewPassRoute = require('./routes/setNewPass')//Set new pass page routes
 
 
 const app = express();
@@ -49,6 +51,8 @@ app.set('views', './views');
 app.use('/', homeRoute);
 app.use('/registration', regRoute);
 app.use('/homepage', userRoute);
+app.use('/passwordRequest', passRequestRoute);
+app.use('/newPass', setNewPassRoute);
 
 const PORT = process.env.PORT || 3000;
 

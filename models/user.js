@@ -1,4 +1,3 @@
-// const { v4: uuidv4 } = require('uuid');
 const {Schema, model} = require('mongoose');
 
 const user = new Schema({
@@ -9,6 +8,16 @@ const user = new Schema({
     password: {
         type: String,
         required: true,
+    },
+    email: {
+        type: String,
+        required: true,
+    },
+    resetToken: {
+        type: String,
+    },
+    resetTokenExp: {
+        type: Date,
     },
 })
 
